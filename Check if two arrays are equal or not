@@ -1,0 +1,45 @@
+class Solution{
+    //Function to check if two arrays are equal or not.
+    public static boolean check(long A[],long B[],int N)
+    {
+        if(Arrays.)
+        TreeMap<Long, Integer> map = new TreeMap<>();
+        
+        for(int i = 0; i < N; i++)
+        {
+            if(map.containsKey(A[i]))
+            {
+                int value = map.get(A[i]);
+                value += 1;
+                map.put(A[i], value);
+            }
+            else
+            {
+                map.put(A[i], 1);
+            }
+        }
+        
+        TreeMap<Long, Integer> map2 = new TreeMap<>();
+        
+        for(int i = 0; i < N; i++)
+        {
+            if(map2.containsKey(B[i]))
+            {
+                int value = map2.get(B[i]);
+                value += 1;
+                map2.put(B[i], value);
+            }
+            else
+            {
+                map2.put(B[i], 1);
+            }
+        }
+        
+        if(map.size() != map2.size())
+        {
+            return false;
+        }
+        
+        return map.equals(map2);
+    }
+}
